@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/actionNotificationItem"
+        android:orderInCategory="1"
+        android:icon="@mipmap/ic_message"
+        android:title="@string/menu_item_notification"/>
+    <item
+        android:id="@+id/actionFavoriteItem"
+        android:orderInCategory="1"
+        android:icon="@mipmap/ic_star"
+        android:title="@string/menu_item_favorite"/>
+    <item
+        android:id="@+id/actionArchiveItem"
+        android:orderInCategory="1"
+        android:icon="@mipmap/ic_package_down"
+        android:title="@string/menu_item_archive"/>
+    <item
+        android:id="@+id/actionSettingsItem"
+        android:orderInCategory="1"
+        android:icon="@mipmap/ic_settings"
+        android:title="@string/menu_item_settings"/>
+    <item
+        android:id="@+id/actionInfoItem"
+        android:orderInCategory="1"
+        android:icon="@mipmap/ic_information"
+        android:title="@string/menu_item_info"/>
+</menu>
