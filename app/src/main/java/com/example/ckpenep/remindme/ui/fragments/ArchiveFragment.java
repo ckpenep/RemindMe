@@ -1,20 +1,19 @@
 package com.example.ckpenep.remindme.ui.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.ckpenep.remindme.R;
 
-/**
- * Created by ckpenep on 05.02.2018.
- */
+public class ArchiveFragment extends AbstractTabFragment {
 
-public class ArchiveFragment extends Fragment {
-    public static ArchiveFragment newInstance() {
+    public static ArchiveFragment newInstance(Context context) {
         ArchiveFragment fragment = new ArchiveFragment();
+        fragment.setContext(context);
+        fragment.setTitle(context.getString(R.string.menu_item_archive));
         return fragment;
     }
 
@@ -24,8 +23,12 @@ public class ArchiveFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_archive, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_archive, container, false);
+        return view;
+    }
+
+    public void setContext(Context context) {
+        mContext = context;
     }
 }

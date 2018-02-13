@@ -1,20 +1,19 @@
 package com.example.ckpenep.remindme.ui.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.ckpenep.remindme.R;
 
-/**
- * Created by ckpenep on 05.02.2018.
- */
+public class FavoriteFragment extends AbstractTabFragment {
 
-public class FavoriteFragment extends Fragment {
-    public static FavoriteFragment newInstance() {
+    public static FavoriteFragment newInstance(Context context) {
         FavoriteFragment fragment = new FavoriteFragment();
+        fragment.setContext(context);
+        fragment.setTitle(context.getString(R.string.menu_item_favorite));
         return fragment;
     }
 
@@ -24,8 +23,12 @@ public class FavoriteFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_favorite, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        view =  inflater.inflate(R.layout.fragment_favorite, container, false);
+        return view;
+    }
+
+    public void setContext(Context context) {
+        mContext = context;
     }
 }

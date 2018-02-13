@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -13,7 +14,7 @@ import android.util.Log;
 import android.view.MenuItem;
 
 import com.example.ckpenep.remindme.R;
-import com.example.ckpenep.remindme.adapters.TabPagerFragmentAdapter;
+import com.example.ckpenep.remindme.adapters.TabsFragmentAdapter;
 import com.example.ckpenep.remindme.constants.Constants;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         setTheme(R.style.AppDefault);//устанавливаем тему
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mViewPager = (ViewPager) findViewById(R.id.view_pager);
 
         initToolBar();
         initNavigationView();
@@ -89,9 +92,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void initTabs() {
 
-        mViewPager = (ViewPager) findViewById(R.id.view_pager);
+        FragmentManager fragmentManager = getSupportFragmentManager();
 
-        TabPagerFragmentAdapter adapter = new TabPagerFragmentAdapter(this, getSupportFragmentManager());
+        TabsFragmentAdapter adapter = new TabsFragmentAdapter(this, getSupportFragmentManager());
         mViewPager.setAdapter(adapter);
 
         TabLayout mTabLayout = (TabLayout) findViewById(R.id.tabLayout);
